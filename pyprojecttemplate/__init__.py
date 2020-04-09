@@ -1,3 +1,0 @@
-"""
-PY project template module.
-"""

@@ -1,6 +1,6 @@
 {
-    "terminal.integrated.cwd": "pyprojecttemplate", // TODO: Replace with own value.
-    "code-runner.cwd": "pyprojecttemplate",         // TODO: Replace with own value.
+    "terminal.integrated.cwd": "twitterlib",
+    "code-runner.cwd": "twitterlib",
 
     "python.pythonPath": "venv/bin/python",
 
