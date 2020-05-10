@@ -35,10 +35,16 @@ flint:
 	flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
 # Lint with Pylint.
+# TODO And tests?
+# Don't do in root otherwise it does venv.
 pylint:
-	pylint pyprojecttemplate
+	pylint twitterlib
 
 lint: flint pylint
+
+# TODO: How do not get error on dir? for now cd. what args?
+sort:
+	cd twitterlib && isort
 
 
 unit:
