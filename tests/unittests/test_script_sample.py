@@ -1,7 +1,7 @@
 """
 Unit tests module.
 """
-from pyprojecttemplate.script_sample import foo, bar
+from twitterlib.script_sample import foo, bar
 
 
 def test_foo():
