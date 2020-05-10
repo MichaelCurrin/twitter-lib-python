@@ -19,6 +19,9 @@ def print_tweets(tweets):
 
     Tweets can be from a standard query or a paged cursor items query.
     This does not support cursor.page option.
+
+    Note: Use loop or list on this to get it to work. This may not be a good
+    design as it is easy to forget.
     """
     for i, tweet in enumerate(tweets):
         print(i + 1, tweet.id, tweet.author.screen_name, get_message(tweet))

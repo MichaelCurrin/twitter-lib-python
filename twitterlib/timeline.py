@@ -11,12 +11,15 @@ import lib
 
 
 def get_timeline(api, screen_name=None, user_id=None):
+    count = constants.MaxCount.TIMELINE
+    tweet_mode = constants.TweetMode.EXTENDED
+
     cursor = tweepy.Cursor(
         api.user_timeline,
         screen_name=screen_name,
         user_id=user_id,
-        count=constants.MAX_COUNT.TIMELINE,
-        tweet_mode=constants.TweetMode.EXTENDED,
+        count=count.value,
+        tweet_mode=tweet_mode.value,
     )
 
     return cursor
@@ -29,7 +32,7 @@ def main(args):
 
     screen_name = args.pop(0)
     cursor = get_timeline(api, screen_name=screen_name)
-    lib.print_tweets(cursor.items())
+    list(lib.print_tweets(cursor.items()))
 
 
 if __name__ == "__main__":

@@ -19,13 +19,18 @@ def geo_to_str(latitude, longitude, distance):
 
 
 def search(api, q=None, geocode=None, lang=None):
+    count = constants.MaxCount.SEARCH_TWEETS
+    result_type = constants.ResultType.MIXED
+    tweet_mode = constants.TweetMode.EXTENDED
+
     cursor = tweepy.Cursor(
         api.search,
         q=q,
         geocode=geocode,
         lang=lang,
-        count=constants.MAX_COUNT.SEARCH_TWEETS,
-        tweet_mode=constants.TweetMode.EXTENDED,
+        count=count.value,
+        result_type=result_type.value,
+        tweet_mode=tweet_mode.value,
     )
 
     return cursor

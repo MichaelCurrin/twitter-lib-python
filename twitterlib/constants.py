@@ -4,7 +4,7 @@ Constants module.
 from enum import Enum
 
 
-class MAX_COUNT(Enum):
+class MaxCount(Enum):
     """
     The maximum count value allowed for an method/endpoint.
     """
