@@ -5,7 +5,9 @@ import sys
 
 import tweepy
 
-from auth import TwitterConnection
+import auth
+import constants
+import lib
 
 
 def get_timeline(api, screen_name=None, user_id=None):
@@ -13,25 +15,21 @@ def get_timeline(api, screen_name=None, user_id=None):
         api.user_timeline,
         screen_name=screen_name,
         user_id=user_id,
-        count=200,
-        tweet_mode="extended",
+        count=constants.MAX_COUNT.TIMELINE,
+        tweet_mode=constants.TweetMode.EXTENDED,
     )
 
     return cursor
 
 
 def main(args):
-    conn = TwitterConnection()
-
-    conn.set_credentials()
-    conn.app_access_token()
-    api = conn.setup_api()
+    api = auth.app_access_token_api()
 
     assert len(args) == 1, "Expected screen name"
+
     screen_name = args.pop(0)
     cursor = get_timeline(api, screen_name=screen_name)
-    for i, tweet in enumerate(cursor.items()):
-        print(i + 1, tweet.full_text)
+    lib.print_tweets(cursor)
 
 
 if __name__ == "__main__":

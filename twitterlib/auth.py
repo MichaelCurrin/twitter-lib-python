@@ -50,12 +50,25 @@ class TwitterConnection:
         self.access_secret = access_secret
 
     def app_access_token(self):
+        assert all(
+            (
+                self.consumer_key,
+                self.consumer_secret,
+                self.access_key,
+                self.access_secret,
+            )
+        ), "Consumer and access tokens must be set."
+
         self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
         self.auth.set_access_token(self.access_key, self.access_secret)
 
         return self.auth
 
     def app_only_token(self):
+        assert all(
+            (self.consumer_key, self.consumer_secret)
+        ), "Consumer tokens must be set."
+
         self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
 
         return self.auth
@@ -66,13 +79,18 @@ class TwitterConnection:
         return self.api
 
 
-def test():
+def app_access_token_api():
     conn = TwitterConnection()
 
     conn.set_credentials()
     conn.app_access_token()
     api = conn.setup_api()
 
+    return api
+
+
+def test():
+    api = app_access_token_api()
     print(api.verify_credentials())
 
 
