@@ -5,6 +5,7 @@
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib.svg)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 
+For more info on basic and advanced functionality of Tweepy as well as Twitter policies and docs links, see my [Python Twitter Guide](https://michaelcurrin.github.io/python-twitter-guide/) site.
 
 
 ## Features
@@ -16,31 +17,10 @@
 
 
 
-## Example usage
-
-_TODO: Screenshot or command-line snippet._
-
-
 ## Documentation
 
-_TODO: Either delete this Documentation section and the `docs` folder, or delete the Installation, Usage and Development sections below._
 
-See project [docs](/docs/).
-
-
-## Installation
-
-_TODO: Put your installation instructions here._
-
-
-## Usage
-
-_TODO: Put your usage instructions here._
-
-
-## Development
-
-_TODO: Put your developer instructions here._
+See [docs](/docs/index.md).
 
 
 
