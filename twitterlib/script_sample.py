@@ -14,7 +14,6 @@ It contains the following, layed out according to PEP-8 naming and spacing:
 # pylint: disable=blacklisted-name,invalid-name
 import sys
 
-
 SOME_GLOBAL = "My global"
 
 
