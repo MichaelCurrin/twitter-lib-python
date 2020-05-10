@@ -6,4 +6,4 @@ __pycache__/
 # Python virtual environment.
 venv
 
-# TODO: See README.md for instructions on filling this section.
+config.local.yml
