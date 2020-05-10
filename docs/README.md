@@ -1,7 +1,6 @@
 # Documentation
 
-<!-- TODO: Replace with your project details. -->
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/py-project-template.svg)](https://GitHub.com/MichaelCurrin/py-project-template/tags/)
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib.svg)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
 
 
 - [Installation](installation.md)
