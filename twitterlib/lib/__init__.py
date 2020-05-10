@@ -16,6 +16,7 @@ def read_text(path):
     """
     Read a file and return cleaned rows of content as a list.
     """
+    # TODO see cheatsheet
     with open(path) as f_in:
         lines = f_in.read().splitlines()
 
