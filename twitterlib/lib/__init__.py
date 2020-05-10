@@ -2,6 +2,7 @@
 Library initialization module.
 
 # TODO: Redo with pathlib and see if there is a better pattern for handling YAML.
+# Create conf module here, or etc?
 """
 import os
 
