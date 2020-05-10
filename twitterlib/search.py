@@ -39,7 +39,8 @@ def main(args):
 
     cursor = search(api, geocode=geocode, lang=lang)
 
-    lib.print_tweets(cursor)
+    tweets = list(lib.print_tweets(cursor.items(50)))
+    lib.tweets_to_csv(tweets)
 
 
 if __name__ == "__main__":

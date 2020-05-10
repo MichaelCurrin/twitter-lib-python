@@ -29,7 +29,7 @@ def main(args):
 
     screen_name = args.pop(0)
     cursor = get_timeline(api, screen_name=screen_name)
-    lib.print_tweets(cursor)
+    lib.print_tweets(cursor.items())
 
 
 if __name__ == "__main__":
