@@ -1,7 +1,7 @@
 # TODO resolve conflict where this is auth.py and auth is the typical name for an object within.
-import tweepy
-
 import os
+
+import tweepy
 
 
 def get_credentials_from_env():
