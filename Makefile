@@ -1,28 +1,26 @@
+default: install install-dev
+
 # Show summary of make commands.
-help:
+h help:
 	@echo 'Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.'
 	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
 
 
-# Install core dependencies.
 install:
 	python -m pip install --upgrade pip
 	pip install -r requirements.txt
 
-# Install dev dependencies.
-dev-install:
+install-dev:
 	pip install -r requirements-dev.txt
 
 
 # Apply Black formatting to Python files.
 fmt:
 	black .
-
 # Print diff only.
 fmt-diff:
 	black --diff .
-
-# Return error code if any changes needed.
+# Return error code if any changes are needed.
 fmt-check:
 	black --check .
 
@@ -40,6 +38,7 @@ pylint:
 	pylint twitterlib
 
 lint: flint pylint
+
 
 # TODO: How do not get error on dir? for now cd. what args?
 sort:
