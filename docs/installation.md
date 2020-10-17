@@ -3,17 +3,31 @@
 
 ## Dotenv
 
-Create `.env_local` using the template.
+### Create and update
 
-Set the values as export variables. Note that this is only for the current process - this is not set at the shell config level, so this is safer.
-
-The command below work on macOS and Linux only.Run this from the root of the project to set.
+Create a local dotenv file using the template.
 
 ```sh
-$ export $(< .env_local | xargs)
+$ cp .env.template.local .env.local
 ```
 
-Test:
+Update it with your Twitter credentials. Never share those details publically.
+
+### Read values
+
+Set the values as export variables whenever you need to use the details.
+
+The command below is provided for macOS and Linux only.
+
+```sh
+$ export $(< .env.local | xargs)
+```
+
+Note that this is only for the current process - this is not set at the shell config level, so this is safer.
+
+### Check
+
+Test that values are set in environment:
 
 ```sh
 $ export | grep ACCESS
