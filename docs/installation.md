@@ -3,7 +3,7 @@
 
 ## Dotenv
 
-### Create and update
+### 1. reate of values
 
 Create a local dotenv file using the template.
 
@@ -13,7 +13,9 @@ $ cp .env.template.local .env.local
 
 Update it with your Twitter credentials. Never share those details publically.
 
-### Read values
+Note - ignore the `.env` file in the repo - that should be left as is so that your IDE handles Python modules correctly.
+
+### 2. Read values
 
 Set the values as export variables whenever you need to use the details.
 
@@ -25,7 +27,7 @@ $ export $(< .env.local | xargs)
 
 Note that this is only for the current process - this is not set at the shell config level, so this is safer.
 
-### Check
+### 3. Check
 
 Test that values are set in environment:
 
