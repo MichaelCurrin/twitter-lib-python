@@ -1,12 +1,10 @@
-# Python compiled binaries.
 __pycache__/
 
 .pytest_cache/
 
-# Python virtual environment.
 venv
 
 config.local.yml
-.env_local
+.env.local
 
 twitterlib/var/*.csv
