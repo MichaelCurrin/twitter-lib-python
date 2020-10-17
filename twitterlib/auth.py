@@ -1,4 +1,5 @@
-# TODO resolve conflict where this is auth.py and auth is the typical name for an object within.
+# TODO resolve conflict where this is auth.py and auth is the typical name for
+# an object within.
 import os
 
 import tweepy
@@ -36,6 +37,14 @@ class TwitterConnection:
 
         self.api = None
 
+    def validate_consumer_creds(self):
+        assert self.consumer_key, "Consumer key must be set"
+        assert self.consumer_secret, "Consumer secret must be set"
+
+    def validate_access_creds(self):
+        assert self.access_key, "Access key must be set"
+        assert self.access_secret, "Access secret must be set"
+
     def set_credentials(self):
         (
             consumer_key,
@@ -49,15 +58,13 @@ class TwitterConnection:
         self.access_key = access_key
         self.access_secret = access_secret
 
+        self.validate_consumer_creds()
+
     def app_access_token(self):
-        assert all(
-            (
-                self.consumer_key,
-                self.consumer_secret,
-                self.access_key,
-                self.access_secret,
-            )
-        ), "Consumer and access tokens must be set."
+        """
+        Return API object authorized with App Access Token.
+        """
+        self.validate_access_creds()
 
         self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
         self.auth.set_access_token(self.access_key, self.access_secret)
@@ -65,10 +72,9 @@ class TwitterConnection:
         return self.auth
 
     def app_only_token(self):
-        assert all(
-            (self.consumer_key, self.consumer_secret)
-        ), "Consumer tokens must be set."
-
+        """
+        Return API connection using App Only Token approach.
+        """
         self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
 
         return self.auth
@@ -80,6 +86,9 @@ class TwitterConnection:
 
 
 def app_access_token_api():
+    """
+    Wrapper to get API object with App Access Token auth.
+    """
     conn = TwitterConnection()
 
     conn.set_credentials()
