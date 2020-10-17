@@ -1,7 +1,7 @@
 # Python Twitter Lib
 > A wrapper library around Tweepy to make interacting with the Twitter API lighter
 
-[![Actions status](https://github.com/MichaelCurrin/python-twitter-lib/workflows/Python%20application/badge.svg)](https://github.com/MichaelCurrin/python-twitter-lib/actions)
+[![Python package](https://github.com/MichaelCurrin/python-twitter-lib/workflows/Python%20package/badge.svg)](https://github.com/MichaelCurrin/python-twitter-lib/actions)
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib.svg)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 
@@ -21,9 +21,9 @@ For more info on basic and advanced functionality of Tweepy as well as Twitter p
 
 ## Documentation
 
+See docs site.
 
-See [docs](/docs/index.md).
-
+- https://michaelcurrin.github.io/python-twitter-lib/
 
 
 ## Background
