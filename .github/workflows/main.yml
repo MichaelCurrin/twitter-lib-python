@@ -17,11 +17,12 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: make
-    
-    - name: Format
+      run: |
+        make install
+        make install-dev
+
+    - name: Check formatting
       run: make fmt-check
     
     - name: Lint
       run: make lint
-    
