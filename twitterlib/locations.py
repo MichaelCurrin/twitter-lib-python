@@ -3,6 +3,9 @@ Locations module.
 
 Get all available locations in the Twitter API.
 
+Sample usage - write the prettified output to a JSON file.
+    python locations.py > var/locations.json
+
 Each location is like:
     {
         "name": "Worldwide",
