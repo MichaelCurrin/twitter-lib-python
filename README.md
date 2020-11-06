@@ -7,7 +7,8 @@
 
 For more info on basic and advanced functionality of Tweepy as well as Twitter policies and docs links, see my [Python Twitter Guide](https://michaelcurrin.github.io/python-twitter-guide/) site.
 
-**Note: This project is not ready to be used**
+**Note: This project is still in development and not properly tested.** But, the code here is of good quality and based on experience with Tweepy, so you are welcome to use something you like.
+
 
 ## Features
 
