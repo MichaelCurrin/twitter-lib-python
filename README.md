@@ -11,12 +11,11 @@ For more info on basic and advanced functionality of Tweepy as well as Twitter p
 
 ## Features
 
-- Install and use this project in your project, so you can don't have to write low-level Tweepy code yourself.
-- Same yourself time looking at the Tweepy repo, Tweepy docs and Twitter API docs - use this abstraction layer.
+- Install and use this project in your project, so you can don't have to write low-level Tweepy code yourself. Currently only available as a cloned repo and not as an installable package.
+- Save yourself time looking at the Tweepy repo, Tweepy docs and Twitter API docs - use this abstraction layer.
 - The logic is centralized and easy to reuse across multiple projects.
 - Tweepy parameters are codified as enums - so you get an error if you fail to choose one. See the [constants](twitterlib/constants.py) module.
-- Some scripts may run as standalone utilities so you can perform actions without writing code yourself.
-
+- Some scripts may run as standalone CLI utilities, so you can perform actions without writing code yourself.
 
 
 ## Documentation
