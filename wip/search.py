@@ -8,6 +8,7 @@ Future work:
     Do retweeting.
     Use cursors.
     Move auth connection setup outside of searching.
+    Check types with mypy
 See docs:
     https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
     http://docs.tweepy.org/en/latest/api.html#API.search
