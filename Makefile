@@ -2,8 +2,7 @@ default: install install-dev
 
 # Show summary of make commands.
 h help:
-	@echo 'Print lines that are not indented (targets and comments) or empty, plus any indented echo lines.'
-	@egrep '(^\S)|(^$$)|\s+@echo' Makefile
+	@grep '^[a-z]' Makefile
 
 
 install:
