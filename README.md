@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 
 [![Made with Python](https://img.shields.io/badge/Python->%3D3.6-blue?logo=python&logoColor=white)](https://python.org)
-[![dependency - tweepy](https://img.shields.io/badge/dependency-tweepy-blue?logo=vue.js&logoColor=white)](https://pypi.org/project/tweepy)
+[![dependency - tweepy](https://img.shields.io/badge/dependency-tweepy-blue)](https://pypi.org/project/tweepy)
 
 For more info on basic and advanced functionality of Tweepy as well as Twitter policies and docs links, see my [Python Twitter Guide](https://michaelcurrin.github.io/python-twitter-guide/) site.
 
