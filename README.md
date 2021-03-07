@@ -1,5 +1,5 @@
 # Python Twitter Lib
-> A wrapper library around Tweepy to make interacting with the Twitter API lighter
+> Interact with the Twitter API using a high-level wrapper around Tweepy
 
 [![Python package](https://github.com/MichaelCurrin/python-twitter-lib/workflows/Python%20package/badge.svg)](https://github.com/MichaelCurrin/python-twitter-lib/actions?query=workflow:"Python+package")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib.svg)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
