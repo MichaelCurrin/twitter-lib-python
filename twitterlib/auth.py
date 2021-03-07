@@ -22,7 +22,10 @@ def get_credentials_from_env():
 
 
 class TwitterConnection:
-    
+    """
+    Manage Twitter credentials, authentication and making a tweepy.API object.
+    """
+
     def __init__(self):
         # Avoid moving setup steps here until I know the flows.
         # Maybe there are methods here or functions outside for one-line setup
@@ -98,11 +101,14 @@ class TwitterConnection:
 def app_access_token_api():
     """
     Wrapper to get API object which has App Access Token auth.
+
+    TODO Refactor the class to a function only since using this
+    functio seems to be the main entry-point.
     """
     conn = TwitterConnection()
     conn.set_credentials()
     conn.app_access_token()
-    
+
     api = conn.setup_api()
 
     return api
