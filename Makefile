@@ -15,8 +15,10 @@ install-dev:
 
 fmt:
 	black .
+	isort .
 fmt-check:
 	black . --diff --check
+	isort . --diff --check-only
 
 
 flint:
@@ -30,8 +32,3 @@ pylint:
 	pylint twitterlib
 
 lint: flint pylint
-
-
-# TODO: How do not get error on dir? for now cd. what args?
-sort:
-	cd twitterlib && isort
