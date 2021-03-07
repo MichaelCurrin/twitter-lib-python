@@ -1,6 +1,8 @@
 default: install install-dev
 
-# Show summary of make commands.
+all: install install-dev fmt-check flake8
+
+
 h help:
 	@grep '^[a-z]' Makefile
 
@@ -20,15 +22,11 @@ fmt-check:
 	black . --diff --check
 	isort . --diff --check-only
 
-
-flint:
-	# Stop the build if there are Python syntax errors or undefined names.
-	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-	# Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide.
-	flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-# Don't do in root otherwise it does venv.
 pylint:
-	pylint twitterlib
+	pylint twitterlib || pylint-exit $$?
 
-lint: flint pylint
+flake8:
+	flake8 twitterlib --count --select=E9,F63,F7,F82 --show-source --statistics
+	flake8 twitterlib --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+lint: flake8 pylint
