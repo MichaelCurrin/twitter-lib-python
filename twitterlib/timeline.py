@@ -3,11 +3,10 @@ Timeline module.
 """
 import sys
 
-import tweepy
-
 import auth
 import constants
 import lib
+import tweepy
 
 
 def get_timeline(api, screen_name=None, user_id=None):

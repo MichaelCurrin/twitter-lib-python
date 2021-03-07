@@ -3,11 +3,10 @@ Search module.
 """
 import sys
 
-import tweepy
-
 import auth
 import constants
 import lib
+import tweepy
 
 
 def geo_to_str(latitude, longitude, distance):
