@@ -1,3 +1,6 @@
+"""
+Authorization module.
+"""
 # TODO resolve conflict where this is auth.py and auth is the typical name for
 # an object within.
 import os
@@ -6,6 +9,9 @@ import tweepy
 
 
 def get_credentials_from_env():
+    """
+    Read Twitter API credentials from environment variables.
+    """
     consumer_key = os.environ.get("CONSUMER_KEY")
     consumer_secret = os.environ.get("CONSUMER_SECRET")
 
@@ -16,9 +22,10 @@ def get_credentials_from_env():
 
 
 class TwitterConnection:
+    
     def __init__(self):
         # Avoid moving setup steps here until I know the flows.
-        # Maybe there are methods here or functions outside for one line setup
+        # Maybe there are methods here or functions outside for one-line setup
         # flows.
         self.auth = None
 
@@ -46,6 +53,9 @@ class TwitterConnection:
         assert self.access_secret, "Access secret must be set"
 
     def set_credentials(self):
+        """
+        Read credentials and set them on the instance.
+        """
         (
             consumer_key,
             consumer_secret,
@@ -87,12 +97,12 @@ class TwitterConnection:
 
 def app_access_token_api():
     """
-    Wrapper to get API object with App Access Token auth.
+    Wrapper to get API object which has App Access Token auth.
     """
     conn = TwitterConnection()
-
     conn.set_credentials()
     conn.app_access_token()
+    
     api = conn.setup_api()
 
     return api
