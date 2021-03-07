@@ -29,7 +29,11 @@ For more info on basic and advanced functionality of Tweepy as well as Twitter p
 
 ## Documentation
 
+<div align="center">
+    
 [![View - Online docs](https://img.shields.io/badge/View-Online_docs-2ea44f?style=for-the-badge)](https://michaelcurrin.github.io/python-twitter-lib/)
+
+</div>
 
 
 ## Background
