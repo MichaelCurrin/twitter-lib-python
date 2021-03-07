@@ -1,9 +1,12 @@
 # Python Twitter Lib
 > A wrapper library around Tweepy to make interacting with the Twitter API lighter
 
-[![Python package](https://github.com/MichaelCurrin/python-twitter-lib/workflows/Python%20package/badge.svg)](https://github.com/MichaelCurrin/python-twitter-lib/actions)
+[![Python package](https://github.com/MichaelCurrin/python-twitter-lib/workflows/Python%20package/badge.svg)](https://github.com/MichaelCurrin/python-twitter-lib/actions?query=workflow:"Python+package")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib.svg)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
+
+[![Made with Python](https://img.shields.io/badge/Python->%3D3.6-blue?logo=python&logoColor=white)](https://python.org)
+[![dependency - tweepy](https://img.shields.io/badge/dependency-tweepy-blue?logo=vue.js&logoColor=white)](https://pypi.org/project/tweepy)
 
 For more info on basic and advanced functionality of Tweepy as well as Twitter policies and docs links, see my [Python Twitter Guide](https://michaelcurrin.github.io/python-twitter-guide/) site.
 
@@ -21,9 +24,7 @@ For more info on basic and advanced functionality of Tweepy as well as Twitter p
 
 ## Documentation
 
-See docs site.
-
-- https://michaelcurrin.github.io/python-twitter-lib/
+[![View - Online docs](https://img.shields.io/badge/View-Online_docs-2ea44f?style=for-the-badge)](https://michaelcurrin.github.io/python-twitter-lib/)
 
 
 ## Background
@@ -39,4 +40,4 @@ The limitation is that the Twitter API may change and therefore the rules implem
 
 ## License
 
-Licensed under [MIT](/LICENSE).
+Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
