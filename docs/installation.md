@@ -11,7 +11,7 @@ Create a local dotenv file using the template.
 $ cp .env.template.local .env.local
 ```
 
-Update it with your Twitter credentials. Never share those details publically.
+Update it with your Twitter credentials. Never share those details publicly.
 
 Note - ignore the `.env` file in the repo - that should be left as is so that your IDE handles Python modules correctly.
 
