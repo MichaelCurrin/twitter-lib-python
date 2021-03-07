@@ -5,7 +5,7 @@
 
 Do this when opening an terminal, before doing queries. This can be replaced with alternate configs or using `dotenv` in future.
 
-This can be run inside [twitterlib](/twitterlib) because of the relative path.
+This _can_ be run from inside [twitterlib](/twitterlib/) because of the relative path.
 
 ```sh
 $ export $(< ../.env_local | xargs)
