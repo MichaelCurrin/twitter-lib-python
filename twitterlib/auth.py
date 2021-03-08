@@ -1,7 +1,7 @@
 """
 Authorization module.
 """
-# TODO resolve conflict where this is auth.py and auth is the typical name for
+# TODO: resolve conflict where this is auth.py and auth is the typical name for
 # an object within.
 import os
 
