@@ -2,11 +2,11 @@
 > Interact with the Twitter API using a high-level wrapper around Tweepy
 
 [![Python package](https://github.com/MichaelCurrin/python-twitter-lib/workflows/Python%20package/badge.svg)](https://github.com/MichaelCurrin/python-twitter-lib/actions?query=workflow:"Python+package")
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib.svg)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib)](https://GitHub.com/MichaelCurrin/python-twitter-lib/tags/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 
-[![Made with Python](https://img.shields.io/badge/Python->%3D3.6-blue?logo=python&logoColor=white)](https://python.org)
-[![dependency - tweepy](https://img.shields.io/badge/dependency-tweepy-blue)](https://pypi.org/project/tweepy)
+[![Made with Python](https://img.shields.io/badge/Python->=3.6-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
+[![dependency - tweepy](https://img.shields.io/badge/tweepy-3-blue?logo=twitter&logoColor=white)](https://www.tweepy.org/ "Go to Tweepy homepage")
 
 
 ## About
