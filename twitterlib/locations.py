@@ -28,7 +28,7 @@ from . import api_auth
 def fetch():
     api = api_auth.app_access_token_api()
 
-    locations = api.trends_available()
+    locations = api.available_trends()
 
     return locations
 
