@@ -1,5 +1,5 @@
 """
-Authorization module.
+API Authorization module.
 """
 import os
 

@@ -5,7 +5,7 @@ import sys
 
 import tweepy
 
-import auth
+import api
 import constants
 import lib
 
@@ -49,7 +49,7 @@ def main(_args):
     """
     Command-line argument.
     """
-    api = auth.app_access_token_api()
+    api = api.app_access_token_api()
 
     geocode = geo_to_str("33.3125", "44.3661", "100km")
     lang = "ar"

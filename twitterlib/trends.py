@@ -80,7 +80,7 @@ the URL and query are URL-encoded:
 """
 import sys
 
-import auth
+import api
 
 WORLD_OEID = 1
 
@@ -91,7 +91,7 @@ def fetch(woeid):
 
     :param woeid: Where On Earth ID as an integer or integer-like string.
     """
-    api = auth.app_access_token_api()
+    api = api.app_access_token_api()
 
     return api.trends_place(woeid)[0]
 
