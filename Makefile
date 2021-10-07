@@ -11,7 +11,7 @@ APP_DIR = twitterlib
 
 default: install install-dev
 
-all: install install-dev fmt-check flake8
+all: install install-dev fmt-check lint typecheck
 
 
 h help:
@@ -52,6 +52,11 @@ flake8:
 lint: pylint flake8
 
 fix: fmt lint
+
+
+t typecheck:
+	mypy $(APP_DIR)
+
 
 
 demo-timeline:
