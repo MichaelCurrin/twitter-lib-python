@@ -8,7 +8,7 @@ h help:
 
 
 install:
-	python -m pip install --upgrade pip
+	pip install --upgrade pip
 	pip install -r requirements.txt
 
 install-dev:
