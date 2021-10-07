@@ -11,7 +11,6 @@ import tweepy
 
 CONNECTION_OPTIONS = dict(
     wait_on_rate_limit=True,
-    wait_on_rate_limit_notify=True,
     retry_count=3,
     retry_delay=5,
     retry_errors=[401, 404, 500, 503],
