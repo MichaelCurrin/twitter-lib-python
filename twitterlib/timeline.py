@@ -3,10 +3,9 @@ Timeline module.
 """
 import sys
 
-import api_auth
-import constants
-import lib
 import tweepy
+
+from . import api_auth, constants, lib
 
 
 def get_timeline(api, screen_name=None, user_id=None):

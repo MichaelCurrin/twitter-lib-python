@@ -22,7 +22,7 @@ Each location is like:
 """
 import json
 
-import api_auth
+from . import api_auth
 
 
 def fetch():

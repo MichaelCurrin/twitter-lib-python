@@ -81,7 +81,7 @@ the URL and query are URL-encoded:
 """
 import sys
 
-import api_auth
+from . import api_auth
 
 
 WORLD_OEID = 1
