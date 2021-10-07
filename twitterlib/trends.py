@@ -46,7 +46,7 @@ WORLD_OEID = 1
 def fetch(woeid):
     """
     Fetch trends items for a target location.
-    
+
     :param woeid: Where On Earth ID as an integer or integer-like string.
     """
     api = auth.app_access_token_api()
@@ -57,7 +57,7 @@ def fetch(woeid):
 def main(args):
     """
     Command-line entry-point.
-    
+
     Accepts an optional argument
         WOEID. e.g. '2972'. Defaults to using Worlwide if not set.
     """
@@ -65,7 +65,7 @@ def main(args):
 
     resp = fetch(woeid)
     trends = resp["trends"]
-    print(json.dumps(trends[:5]), indent=4))
+    print(json.dumps(trends[:5]), indent=4)
 
 
 if __name__ == "__main__":
