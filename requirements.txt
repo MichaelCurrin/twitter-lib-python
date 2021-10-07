@@ -1,2 +1,2 @@
-tweepy~=3.9
+tweepy~>4.1.0
 PyYAML~=5.3
