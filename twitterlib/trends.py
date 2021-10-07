@@ -62,7 +62,8 @@ the URL and query are URL-encoded:
 
     {
         "name": "ワールドカップ",
-        "url": "http://twitter.com/search?q=%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%82%AB%E3%83%83%E3%83%97",
+        "url": "http://twitter.com/search?
+            q=%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%82%AB%E3%83%83%E3%83%97",
         "promoted_content": None,
         "query": "%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%82%AB%E3%83%83%E3%83%97",
         "tweet_volume": None
