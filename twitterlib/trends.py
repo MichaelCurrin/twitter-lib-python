@@ -64,7 +64,7 @@ def main(args):
 
     resp = fetch(woeid)
     trends = resp["trends"]
-    print(json.dumps(trends[:5]), indent=4)
+    print(json.dumps(trends[:5], indent=4))
 
 
 if __name__ == "__main__":
