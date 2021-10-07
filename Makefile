@@ -3,6 +3,8 @@ export CONSUMER_SECRET
 export ACCESS_KEY
 export ACCESS_SECRET
 
+export PYTHONPATH
+
 CONFIG = .env.local
 APP_DIR = twitterlib
 
@@ -39,12 +41,12 @@ fmt-check:
 	isort . --diff --check-only
 
 pylint:
-	pylint $(APP_DIR) || pylint-exit $$?
+	source .env \
+		&& pylint $(APP_DIR) \
+		|| pylint-exit $$?
 
 flake8:
-	# Error on syntax errors or undefined names.
 	flake8 . --select=E9,F63,F7,F82 --show-source
-	# Warn on everything else.
 	flake8 . --exit-zero
 
 lint: pylint flake8
