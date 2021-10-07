@@ -10,17 +10,25 @@ import tweepy
 
 
 def geo_to_str(latitude, longitude, distance):
-    assert distance.endswith("km") or distance.endswith(
-        "mi"
-    ), "Must include units as km or mi."
+    """
+    Return geolocation data as string of comma-separated values.
+    """
+    assert distance.endswith("km") or distance.endswith("mi"), \
+        "Must include units as 'km' or 'mi'."
 
     return ",".join((latitude, longitude, distance))
 
 
 def search(api, q=None, geocode=None, lang=None):
+    """
+    Get tweets using search parameters.
+    """
     count = constants.MaxCount.SEARCH_TWEETS
     result_type = constants.ResultType.MIXED
     tweet_mode = constants.TweetMode.EXTENDED
+    
+    assert q or geocode or lang, \
+        "At least one of the optional arguments in `search` function must be set"
 
     cursor = tweepy.Cursor(
         api.search,
@@ -36,6 +44,9 @@ def search(api, q=None, geocode=None, lang=None):
 
 
 def main(args):
+    """
+    Command-line argument.
+    """
     api = auth.app_access_token_api()
 
     geocode = geo_to_str("33.3125", "44.3661", "100km")
