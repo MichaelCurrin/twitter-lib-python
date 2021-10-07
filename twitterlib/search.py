@@ -19,7 +19,7 @@ def geo_to_str(latitude, longitude, distance):
     return ",".join((latitude, longitude, distance))
 
 
-def search(api, q=None, geocode=None, lang=None):
+def search(api, query=None, geocode=None, lang=None):
     """
     Get tweets using search parameters.
     """
@@ -28,12 +28,12 @@ def search(api, q=None, geocode=None, lang=None):
     tweet_mode = constants.TweetMode.EXTENDED
 
     assert (
-        q or geocode or lang
+        query or geocode or lang
     ), "At least one of the optional arguments in `search` function must be set"
 
     cursor = tweepy.Cursor(
         api.search,
-        q=q,
+        q=query,
         geocode=geocode,
         lang=lang,
         count=count.value,
