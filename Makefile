@@ -4,7 +4,7 @@ export ACCESS_KEY
 export ACCESS_SECRET
 
 CONFIG = .env.local
-APP = twitterlib
+APP_DIR = twitterlib
 
 
 default: install install-dev
@@ -24,29 +24,40 @@ install-dev:
 	pip install -r requirements-dev.txt
 
 
+upgrade:
+	pip install pip --upgrade
+	pip install -r requirements.txt --upgrade
+	pip install -r requirements-dev.txt --upgrade
+
+
 fmt:
 	black .
 	isort .
+
 fmt-check:
 	black . --diff --check
 	isort . --diff --check-only
 
 pylint:
-	pylint $(APP) || pylint-exit $$?
+	pylint $(APP_DIR) || pylint-exit $$?
 
 flake8:
-	flake8 $(APP) --count --select=E9,F63,F7,F82 --show-source --statistics
-	flake8 $(APP) --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+	# Error on syntax errors or undefined names.
+	flake8 . --select=E9,F63,F7,F82 --show-source
+	# Warn on everything else.
+	flake8 . --exit-zero
 
-lint: flake8 pylint
+lint: pylint flake8
+
+fix: fmt lint
 
 
 demo-timeline:
 	source $(CONFIG) \
-		&& cd $(APP) \
+		&& cd $(APP_DIR) \
 		&& python -u timeline.py 'MichaelCurrin'
 
 demo-trends:
 	source $(CONFIG) \
-		&& cd $(APP) \
+		&& cd $(APP_DIR) \
 		&& python trends.py
