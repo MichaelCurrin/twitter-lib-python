@@ -10,6 +10,9 @@ import tweepy
 
 
 def get_timeline(api, screen_name=None, user_id=None):
+    """
+    Get tweets of a selected user.
+    """
     count = constants.MaxCount.TIMELINE
     tweet_mode = constants.TweetMode.EXTENDED
 
@@ -25,9 +28,12 @@ def get_timeline(api, screen_name=None, user_id=None):
 
 
 def main(args):
+    """
+    Command-line entry-point.
+    """
     api = auth.app_access_token_api()
 
-    assert len(args) == 1, "Expected screen name"
+    assert len(args) == 1, "Expected screen name as argument"
 
     screen_name = args.pop(0)
     cursor = get_timeline(api, screen_name=screen_name)
