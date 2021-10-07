@@ -22,11 +22,11 @@ Each location is like:
 """
 import json
 
-import api
+import api_auth
 
 
 def fetch():
-    api = api.app_access_token_api()
+    api = api_auth.app_access_token_api()
 
     locations = api.trends_available()
 

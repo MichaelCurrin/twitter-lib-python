@@ -3,10 +3,11 @@ Timeline module.
 """
 import sys
 
-import api
+import tweepy
+
+import api_auth
 import constants
 import lib
-import tweepy
 
 
 def get_timeline(api, screen_name=None, user_id=None):
@@ -31,7 +32,7 @@ def main(args):
     """
     Command-line entry-point.
     """
-    api = api.app_access_token_api()
+    api = api_auth.app_access_token_api()
 
     assert len(args) == 1, "Expected screen name as argument"
 

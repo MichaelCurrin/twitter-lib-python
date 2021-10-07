@@ -1,5 +1,8 @@
 """
 API Authorization module.
+
+This can't be named `api` or `auth` otherwise it clashes with variables in
+other modules.
 """
 import os
 
