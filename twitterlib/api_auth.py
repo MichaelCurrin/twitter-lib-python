@@ -44,8 +44,6 @@ class TwitterConnection:
         self.access_key = None
         self.access_secret = None
 
-        self.connection_options = CONNECTION_OPTIONS
-
         self.api = None
 
     def validate_consumer_creds(self):
@@ -94,7 +92,7 @@ class TwitterConnection:
         return self.auth
 
     def setup_api(self):
-        self.api = tweepy.API(self.auth, **self.connection_options)
+        self.api = tweepy.API(self.auth, **CONNECTION_OPTIONS)
 
         return self.api
 
