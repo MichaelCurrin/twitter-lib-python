@@ -6,9 +6,13 @@
 
 ## Contents
 
-- [Installation](installation.md)
-- [Usage](usage.md)
-- [Development](development.md)
+- [About](about.md)
+- [Features](features.md)
+- [Background](background.md)
+- Manual
+    - [Installation](installation.md)
+    - [Usage](usage.md)
+    - [Development](development.md)
 
 
 ## View source

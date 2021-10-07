@@ -10,49 +10,13 @@
 [![Made for Twitter API](https://img.shields.io/badge/Twitter_API-1.1-blue?logo=twitter&logoColor=white)](https://developer.twitter.com/en/docs)
 
 
-## About
-
-This project gives you a library of functions to choose from. It lets you get data out of Twitter in a high-level way - much more convenient than learning all the intricacies of Tweepy and the Twitter API. Especially auth and paging.
-
-Tweepy is deliberately flexible to not go out of sync with the Twitter API, but the downside is that Tweepy doesn't validate the values before they are sent to the Twitter API. So this Python Twitter Lib project handles all that API research for you so you can focus on writing a few lines of code and letting the Lib do the heavy lifting and make decisions for you.
-
-For more info on basic and advanced functionality of Tweepy as well as Twitter policies and docs links, see my [Python Twitter Guide](https://michaelcurrin.github.io/python-twitter-guide/) site.
-
-**Note: This project is still in development and not properly tested.** But, the code here is of good quality and based on experience with Tweepy, so you are welcome to use something you like.
-
-
-## Features
-
-- This is a high-level CLI.
-    - It handles common Twitter API tasks. 
-    - It makes some choices for you on approach and takes care of implementation details like, so you can focus on writing your logic.
-    - You can don't have to write low-level Tweepy code yourself or read the Tweepy docs. 
-    - Save yourself time looking at the Tweepy repo, Tweepy docs and Twitter API docs - use this abstraction layer.
-- Install and use this project. Currently only available as a cloned repo and not as an installable package.
-- The logic is centralized and easy to reuse across multiple Twitter projects. This saves having to copy and maintain long Tweepy boilerplate code all over.
-- Rules from the Twitter API are enforced here, making up for Tweepy's like of handling those.
-     - Tweepy parameters are codified as enums - so you get an error if you fail to choose a valid value. See the [constants](twitterlib/constants.py) module.
-- Some scripts may run as standalone CLI utilities, so you can perform actions without writing code yourself.
-
-
 ## Documentation
 
 <div align="center">
-    
+
 [![View - Online docs](https://img.shields.io/badge/View-Online_docs-2ea44f?style=for-the-badge)](https://michaelcurrin.github.io/python-twitter-lib/ "Go to online docs")
 
 </div>
-
-
-## Background
-
-I got tired of duplicating the same common Tweepy logic in each of my projects and having to check how it works each time.
-
-So this project uses cumulative learning to build functionality which gets better in one place and gets reused everywhere by projects which use this project.
-
-Tweepy is a _light_ wrapper on the Twitter API and so it leaves some logic like parameters and response data to be handled by Twitter API or the end user. It also takes a lot of reading of the Twitter API and Tweepy and sample scripts on StackOverflow to figure how to do something which should be straightforward. So this project makes some choices for you, or parametrizes and validates in a way that Tweepy doesn't, so you can use this an easy wrapper on Tweepy to achieve common tasks.
-
-The limitation is that the Twitter API may change and therefore the rules implemented here are no longer valid (e.g. the name or value of a parameter, or the format of returned data). And only a subset of Tweepy functionality is covered and in the preferred approach taken by me. However, this project is still useful both directly and for use in other projects.
 
 
 ## License
