@@ -37,7 +37,7 @@ def write_csv(filepath, rows):
     """
     Note this will overwrite and not append.
     """
-    with open(filepath, "w") as f_out:
+    with open(filepath, "w", encoding="utf-8") as f_out:
         writer = csv.writer(f_out)
         writer.writerows(rows)
 
