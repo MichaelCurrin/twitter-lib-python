@@ -5,6 +5,9 @@ import csv
 
 
 def get_message(tweet):
+    """
+    Get the message on a Tweet object.
+    """
     try:
         message = tweet.full_text
     except AttributeError:
@@ -20,8 +23,10 @@ def print_tweets(tweets):
     Tweets can be from a standard query or a paged cursor items query.
     This does not support cursor.page option.
 
+    Returns a generator.
+    
     Note: Use loop or list on this to get it to work. This may not be a good
-    design as it is easy to forget.
+    design as it is easy to forget to do. TODO: remove the yield bit.
     """
     for i, tweet in enumerate(tweets):
         print(i + 1, tweet.id, tweet.author.screen_name, get_message(tweet))
@@ -38,6 +43,9 @@ def write_csv(filepath, rows):
 
 
 def tweets_to_csv(tweets):
+    """
+    Write out tweets to a CSV file.
+    """
     out_file = "var/tweets.csv"
 
     out_tweets = [
