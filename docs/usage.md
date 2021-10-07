@@ -10,13 +10,32 @@ $ export $(< .env.local | xargs)
 
 ## CLI
 
-### Get tweets of a Twitter user
+Note use of unbuffered `-u` flag in some cases for immediate printing.
 
-Note use of unbuffered flag for immediate printing.
+### Get tweets of a Twitter user
 
 ```sh
 $ cd twitterlib
-$ python -u timeline.py 'realDonaldTrump'
+$ python -u timeline.py 'MichaelCurrin'
+```
+
+Or for a demo with a fixed username:
+
+```sh
+$ make demo-timeline
+```
+
+### Trends
+
+```sh
+$ cd twitterlib
+$ python trends.py
+```
+
+Or for a demo:
+
+```sh
+$ make demo-trends
 ```
 
 
