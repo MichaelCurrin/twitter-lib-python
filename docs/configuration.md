@@ -3,7 +3,7 @@
 
 ## Dotenv
 
-### 1. Create of values
+### 1. Create values
 
 Create a local dotenv file using the template.
 
@@ -11,9 +11,9 @@ Create a local dotenv file using the template.
 $ cp .env.template.local .env.local
 ```
 
-Update it with your Twitter credentials. Never share those details publicly.
+Update `.env.local` with your Twitter credentials. Never share those details publicly.
 
-Note - ignore the `.env` file in the repo - that should be left as is so that your IDE handles Python modules correctly.
+Note this `.env.local` is ignored by Git and is also separate from the versioned `.env` file which has been set up for VS Code.
 
 ### 2. Read values
 
@@ -33,7 +33,7 @@ There is also a `dotenv` Python package which can read this within the code, but
 
 Test that values are set in environment:
 
-```sh
+```console
 $ export | grep ACCESS
 ACCESS_KEY=foo
 ACCESS_SECRET=bar
