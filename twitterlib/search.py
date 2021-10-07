@@ -3,10 +3,11 @@ Search module.
 """
 import sys
 
+import tweepy
+
 import auth
 import constants
 import lib
-import tweepy
 
 
 def geo_to_str(latitude, longitude, distance):
@@ -44,7 +45,7 @@ def search(api, q=None, geocode=None, lang=None):
     return cursor
 
 
-def main(args):
+def main(_args):
     """
     Command-line argument.
     """
