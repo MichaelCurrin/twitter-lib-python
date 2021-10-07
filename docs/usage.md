@@ -1,20 +1,25 @@
 # Usage
 
+Activate the virtual environment before running these commands.
 
-## Get timeline
+
+## Get Tweet timeline
 
 ```sh
 $ cd twitterlib
-$ # Unbuffered for immediate printing.
+$ # Not unbuffered for immediate printing.
 $ python -u timeline.py 'realDonaldTrump'
 ```
 
+Use the library in your own project. TODO: Make this an installable package.
 
-From outside this project:
+- `main.py`
+    ```python
+    import twitterlib.timeline
 
-```python
->>> import twitterlib.timeline
->>> cursor = get_timeline(api, screen_name="foo")
->>> for tweet in cursor.items(300):
-...     print(tweet.full_text)
-```
+
+    cursor = get_timeline(api, screen_name="foo")
+
+    for tweet in cursor.items(300):
+    print(tweet.full_text)
+    ```
