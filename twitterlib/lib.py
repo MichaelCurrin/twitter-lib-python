@@ -24,7 +24,7 @@ def print_tweets(tweets):
     This does not support cursor.page option.
 
     Returns a generator.
-    
+
     Note: Use loop or list on this to get it to work. This may not be a good
     design as it is easy to forget to do. TODO: remove the yield bit.
     """
