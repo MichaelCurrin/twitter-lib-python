@@ -25,7 +25,21 @@ Response format:
         ]
     }
 
-Each trend item is like this:
+Each trend item is like one of these, where the name is always readable while
+the URL and query are URL-encoded:
+
+    Basic:
+
+    {
+        "name": "Riverdale",
+        "url": "http://twitter.com/search?q=Riverdale",
+        "promoted_content": None,
+        "query": "Riverdale",
+        "tweet_volume": 51000
+    }
+
+    Phrase:
+
     {
         "name": "Milky Way",
         "url": "http://twitter.com/search?q=%22Milky+Way%22",
@@ -33,8 +47,37 @@ Each trend item is like this:
         "query": "%22Milky+Way%22",
         "tweet_volume": null
     }
+
+    Accent:
+
+    {
+        "name": "Bélgica",
+        "url": "http://twitter.com/search?q=B%C3%A9lgica",
+        "promoted_content": None,
+        "query": "B%C3%A9lgica",
+        "tweet_volume": 17830
+    }
+
+    Foreign characters:
+
+    {
+        "name": "ワールドカップ",
+        "url": "http://twitter.com/search?q=%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%82%AB%E3%83%83%E3%83%97",
+        "promoted_content": None,
+        "query": "%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%82%AB%E3%83%83%E3%83%97",
+        "tweet_volume": None
+    }
+
+    Hashtag:
+
+    {
+        "name": "#FRABEL",
+        "url": "http://twitter.com/search?q=%23FRABEL",
+        "promoted_content": None,
+        "query": "%23FRABEL",
+        "tweet_volume": None
+    }
 """
-import json
 import sys
 
 import auth
@@ -64,7 +107,11 @@ def main(args):
 
     resp = fetch(woeid)
     trends = resp["trends"]
-    print(json.dumps(trends[:5], indent=4))
+    for trend in trends:
+        out_data = dict(
+            name=trend["name"], volume=trend["tweet_volume"], url=trend["url"]
+        )
+        print(out_data)
 
 
 if __name__ == "__main__":
