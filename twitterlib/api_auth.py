@@ -44,8 +44,6 @@ class TwitterConnection:
         self.access_key = None
         self.access_secret = None
 
-        self.api = None
-
     def validate_consumer_creds(self):
         assert self.consumer_key, "Consumer key must be set"
         assert self.consumer_secret, "Consumer secret must be set"
@@ -92,9 +90,7 @@ class TwitterConnection:
         return self.auth
 
     def setup_api(self):
-        self.api = tweepy.API(self.auth, **CONNECTION_OPTIONS)
-
-        return self.api
+        return tweepy.API(self.auth, **CONNECTION_OPTIONS)
 
 
 def app_access_token_api():
