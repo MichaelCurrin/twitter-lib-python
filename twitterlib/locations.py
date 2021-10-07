@@ -26,6 +26,9 @@ from . import api_auth
 
 
 def fetch():
+    """
+    Return locations that the API makes trends available fors.
+    """
     api = api_auth.app_access_token_api()
 
     locations = api.available_trends()
@@ -34,6 +37,9 @@ def fetch():
 
 
 def main():
+    """
+    Command-line entry-point.
+    """
     locations = fetch()
 
     print(json.dumps(locations, indent=4))
