@@ -9,6 +9,15 @@ import os
 import tweepy
 
 
+CONNECTION_OPTIONS = dict(
+    wait_on_rate_limit=True,
+    wait_on_rate_limit_notify=True,
+    retry_count=3,
+    retry_delay=5,
+    retry_errors=[401, 404, 500, 503],
+)
+
+
 def get_credentials_from_env():
     """
     Read Twitter API credentials from environment variables.
@@ -28,9 +37,6 @@ class TwitterConnection:
     """
 
     def __init__(self):
-        # Avoid moving setup steps here until I know the flows.
-        # Maybe there are methods here or functions outside for one-line setup
-        # flows.
         self.auth = None
 
         self.consumer_key = None
@@ -38,13 +44,7 @@ class TwitterConnection:
         self.access_key = None
         self.access_secret = None
 
-        self.connection_options = dict(
-            wait_on_rate_limit=True,
-            wait_on_rate_limit_notify=True,
-            retry_count=3,
-            retry_delay=5,
-            retry_errors=[401, 404, 500, 503],
-        )
+        self.connection_options = CONNECTION_OPTIONS
 
         self.api = None
 
@@ -104,7 +104,7 @@ def app_access_token_api():
     Wrapper to get API object which has App Access Token auth.
 
     TODO Refactor the class to a function only since using this
-    functio seems to be the main entry-point.
+    function seems to be the main entry-point.
     """
     conn = TwitterConnection()
     conn.set_credentials()
