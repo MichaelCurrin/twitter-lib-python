@@ -21,6 +21,7 @@ from dataclasses import dataclass
 import lib.auth
 from lib import load_conf
 
+
 CONF = load_conf()
 MIN_FAV = MIN_RT = 5
 

@@ -10,6 +10,7 @@ import os
 
 import yaml
 
+
 APP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 ETC_DIR = os.path.join(APP_DIR, "etc")
 VAR_DIR = os.path.join(APP_DIR, "var")
