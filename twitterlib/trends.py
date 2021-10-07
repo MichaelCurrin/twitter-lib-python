@@ -39,7 +39,6 @@ import sys
 
 import auth
 
-
 WORLD_OEID = 1
 
 
