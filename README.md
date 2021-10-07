@@ -7,6 +7,7 @@
 
 [![Made with Python](https://img.shields.io/badge/Python->=3.6-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
 [![dependency - tweepy](https://img.shields.io/badge/tweepy-3-blue?logo=twitter&logoColor=white)](https://www.tweepy.org/ "Go to Tweepy homepage")
+[![Made for Twitter API](https://img.shields.io/badge/Twitter_API-1.1-blue?logo=twitter&logoColor=white)](https://developer.twitter.com/en/docs)
 
 
 ## About
