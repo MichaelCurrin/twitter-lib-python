@@ -1,5 +1,4 @@
-
-## Background
+# Background
 
 I got tired of duplicating the same common Tweepy logic in each of my projects and having to check how it works each time.
 
