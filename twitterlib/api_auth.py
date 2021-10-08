@@ -1,12 +1,18 @@
 """
 API Authorization module.
 
-This can't be named `api` or `auth` otherwise it clashes with variables in
+Manage Twitter credentials, authentication, and an API connection.
+
+This module can't be named `api` or `auth` otherwise it clashes with variables in
 other modules.
 """
 import os
+from typing import Optional
 
 import tweepy
+from tweepy.api import API
+from tweepy.auth import OAuthHandler
+from typing_extensions import TypedDict
 
 
 CONNECTION_OPTIONS = dict(
@@ -16,102 +22,80 @@ CONNECTION_OPTIONS = dict(
     retry_errors=[401, 404, 500, 503],
 )
 
+Credentials = TypedDict(
+    "Credentials",
+    {
+        "consumer_key": str,
+        "consumer_secret": str,
+        "access_key": Optional[str],
+        "access_secret": Optional[str],
+    },
+)
 
-def get_credentials_from_env():
+
+def get_credentials(use_access_tokens: bool):
     """
     Read Twitter API credentials from environment variables.
     """
     consumer_key = os.environ.get("CONSUMER_KEY")
     consumer_secret = os.environ.get("CONSUMER_SECRET")
 
-    access_key = os.environ.get("ACCESS_KEY")
-    access_secret = os.environ.get("ACCESS_SECRET")
+    assert consumer_key and consumer_secret, "Consumers tokens must always be set"
 
-    return consumer_key, consumer_secret, access_key, access_secret
+    if use_access_tokens:
+        access_key = os.environ.get("ACCESS_KEY")
+        access_secret = os.environ.get("ACCESS_SECRET")
+
+        assert access_key and access_secret, "Access tokens must be set for chosen flow"
+
+    credentials: Credentials = {
+        "consumer_key": consumer_key,
+        "consumer_secret": consumer_secret,
+        "access_key": access_key,
+        "access_secret": access_secret,
+    }
+
+    return credentials
 
 
-class TwitterConnection:
+def setup_auth(use_access_tokens: bool) -> OAuthHandler:
     """
-    Manage Twitter credentials, authentication and making a tweepy.API object.
+    Return configured Tweepy auth handler.
     """
+    credentials = get_credentials(use_access_tokens)
 
-    def __init__(self):
-        self.auth = None
+    auth = tweepy.OAuthHandler(
+        credentials["consumer_key"], credentials["consumer_secret"]
+    )
+    if use_access_tokens:
+        auth.set_access_token(credentials["access_key"], credentials["access_secret"])
 
-        self.consumer_key = None
-        self.consumer_secret = None
-        self.access_key = None
-        self.access_secret = None
-
-    def validate_consumer_creds(self):
-        assert self.consumer_key, "Consumer key must be set"
-        assert self.consumer_secret, "Consumer secret must be set"
-
-    def validate_access_creds(self):
-        assert self.access_key, "Access key must be set"
-        assert self.access_secret, "Access secret must be set"
-
-    def set_credentials(self):
-        """
-        Read credentials and set them on the instance.
-        """
-        (
-            consumer_key,
-            consumer_secret,
-            access_key,
-            access_secret,
-        ) = get_credentials_from_env()
-
-        self.consumer_key = consumer_key
-        self.consumer_secret = consumer_secret
-        self.access_key = access_key
-        self.access_secret = access_secret
-
-        self.validate_consumer_creds()
-
-    def app_access_token(self):
-        """
-        Return API object authorized with App Access Token.
-        """
-        self.validate_access_creds()
-
-        self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
-        self.auth.set_access_token(self.access_key, self.access_secret)
-
-        return self.auth
-
-    def app_only_token(self):
-        """
-        Return API connection using App Only Token approach.
-        """
-        self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
-
-        return self.auth
-
-    def setup_api(self):
-        return tweepy.API(self.auth, **CONNECTION_OPTIONS)
+    return auth
 
 
-def app_access_token_api():
+def setup_api(auth: OAuthHandler) -> API:
     """
-    Wrapper to get API object which has App Access Token auth.
-
-    TODO Refactor the class to a function only since using this
-    function seems to be the main entry-point.
+    Get Tweepy API connection object using authentication details.
     """
-    conn = TwitterConnection()
-    conn.set_credentials()
-    conn.app_access_token()
-
-    api = conn.setup_api()
-
-    return api
+    return tweepy.API(auth, **CONNECTION_OPTIONS)
 
 
-def test():
+def app_access_token_api() -> API:
+    """
+    Get API object which has App Access Token auth.
+    """
+    auth = setup_auth(use_access_tokens=True)
+
+    return setup_api(auth)
+
+
+def main():
+    """
+    Command-line entry point to test API access.
+    """
     api = app_access_token_api()
     print(api.verify_credentials())
 
 
 if __name__ == "__main__":
-    test()
+    main()
