@@ -8,6 +8,12 @@ export PYTHONPATH
 CONFIG = .env.local
 APP_DIR = twitterlib
 
+screen_name ?= MichaelCurrin
+SCREEN_NAME = $(screen_name)
+
+woeid ?= 1
+WOEID = $(woeid)
+
 
 default: install install-dev
 
@@ -59,12 +65,12 @@ t typecheck:
 
 
 
-demo-timeline:
-	source $(CONFIG) \
-		&& cd $(APP_DIR) \
-		&& python -u timeline.py 'MichaelCurrin'
+timeline:
+	@echo "Getting tweets for: $(SCREEN_NAME)"
 
-demo-trends:
 	source $(CONFIG) \
-		&& cd $(APP_DIR) \
-		&& python trends.py
+		&& python -u -m twitterlib.timeline $(SCREEN_NAME)
+
+trends:
+	source $(CONFIG) \
+		&& python -m twitterlib.trends $(WOEID)
