@@ -45,7 +45,9 @@ def search(api: tweepy.API, query=None, geocode=None, lang=None) -> tweepy.Curso
 
 def main(_args):
     """
-    Command-line argument.
+    Command-line entry-point.
+
+    A demo of searching for tweets for a fixed location and language.
     """
     api = api_auth.app_access_token_api()
 
@@ -55,7 +57,6 @@ def main(_args):
     cursor = search(api, geocode=geocode, lang=lang)
 
     lib.print_tweets(cursor.items(50))
-
     lib.tweets_to_csv(cursor.items(50))
 
 
