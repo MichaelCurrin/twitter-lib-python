@@ -18,7 +18,7 @@ def geo_to_str(latitude, longitude, distance):
     return ",".join((latitude, longitude, distance))
 
 
-def search(api, query=None, geocode=None, lang=None):
+def search(api: tweepy.API, query=None, geocode=None, lang=None) -> tweepy.Cursor:
     """
     Get tweets using search parameters.
     """
