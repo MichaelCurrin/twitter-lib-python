@@ -80,3 +80,7 @@ timeline:
 trends:
 	source $(CONFIG) \
 		&& python -m twitterlib.trends $(WOEID)
+
+search:
+	source $(CONFIG) \
+		&& python -m twitterlib.search
