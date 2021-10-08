@@ -94,7 +94,9 @@ def main():
     Command-line entry point to test API access.
     """
     api = app_access_token_api()
-    print(api.verify_credentials())
+    resp = api.verify_credentials()
+
+    print(f"Authenticated with API successfully as: {resp.screen_name}")
 
 
 if __name__ == "__main__":
