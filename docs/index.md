@@ -1,7 +1,7 @@
 # Python Twitter Lib documentation 🐍🐦📗
 > Interact with the Twitter API using a high-level wrapper around Tweepy
 
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/python-twitter-lib?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/python-twitter-lib/releases/)
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/twitter-lib-python?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/twitter-lib-python/releases/)
 
 [![Made with Python](https://img.shields.io/badge/Python->=3.6-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
 [![dependency - tweepy](https://img.shields.io/badge/tweepy-4-blue?logo=twitter&logoColor=white)](https://www.tweepy.org/ "Go to Tweepy homepage")
@@ -22,4 +22,4 @@
 
 ## View source
 
-[![MichaelCurrin - python-twitter-lib](https://img.shields.io/static/v1?label=MichaelCurrin&message=python-twitter-lib&color=blue&logo=github)](https://github.com/MichaelCurrin/python-twitter-lib)
+[![MichaelCurrin - twitter-lib-python](https://img.shields.io/static/v1?label=MichaelCurrin&message=twitter-lib-python&color=blue&logo=github)](https://github.com/MichaelCurrin/twitter-lib-python)
