@@ -95,7 +95,7 @@ def fetch(woeid):
     """
     api = api_auth.app_access_token_api()
 
-    return api.trends_place(woeid)[0]
+    return api.get_place_trends(woeid)[0]
 
 
 def main(args):
