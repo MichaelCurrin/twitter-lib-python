@@ -64,6 +64,12 @@ t typecheck:
 	mypy $(APP_DIR)
 
 
+auth:
+	@echo "Testing API credentials"
+
+	source $(CONFIG) \
+		&& python -m twitterlib.api_auth
+
 
 timeline:
 	@echo "Getting tweets for: $(SCREEN_NAME)"
