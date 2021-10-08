@@ -14,28 +14,22 @@ Note use of unbuffered `-u` flag in some cases for immediate printing.
 
 ### Get tweets of a Twitter user
 
+Using the default.
+
 ```sh
-$ cd twitterlib
-$ python -u timeline.py 'MichaelCurrin'
+$ make timeline
 ```
 
-Or for a demo with a fixed username:
+Specify a username.
 
 ```sh
-$ make demo-timeline
+$ make demo-timeline screen_name=BarackObama
 ```
 
 ### Trends
 
 ```sh
-$ cd twitterlib
-$ python trends.py
-```
-
-Or for a demo:
-
-```sh
-$ make demo-trends
+$ make trends
 ```
 
 
