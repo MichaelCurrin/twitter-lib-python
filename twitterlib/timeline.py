@@ -32,7 +32,7 @@ def main(args):
     """
     api = api_auth.app_access_token_api()
 
-    assert len(args) == 1, "Expected screen name as argument"
+    assert len(args) == 1, "Expected screen name as an argument"
 
     screen_name = args.pop(0)
     cursor = get_timeline(api, screen_name=screen_name)
