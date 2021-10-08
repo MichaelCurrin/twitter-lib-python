@@ -10,8 +10,6 @@ import os
 from typing import Optional
 
 import tweepy
-from tweepy.api import API
-from tweepy.auth import OAuthHandler
 from typing_extensions import TypedDict
 
 
@@ -58,7 +56,7 @@ def get_credentials(use_access_tokens: bool):
     return credentials
 
 
-def setup_auth(use_access_tokens: bool) -> OAuthHandler:
+def setup_auth(use_access_tokens: bool) -> tweepy.OAuthHandler:
     """
     Return configured Tweepy auth handler.
     """
@@ -73,14 +71,14 @@ def setup_auth(use_access_tokens: bool) -> OAuthHandler:
     return auth
 
 
-def setup_api(auth: OAuthHandler) -> API:
+def setup_api(auth: tweepy.OAuthHandler) -> tweepy.API:
     """
     Get Tweepy API connection object using authentication details.
     """
     return tweepy.API(auth, **CONNECTION_OPTIONS)
 
 
-def app_access_token_api() -> API:
+def app_access_token_api() -> tweepy.API:
     """
     Get API object which has App Access Token auth.
     """
