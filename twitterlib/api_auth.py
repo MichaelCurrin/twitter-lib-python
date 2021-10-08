@@ -96,8 +96,8 @@ def app_only_token_api() -> tweepy.API:
     Get API object which has App-Only Token auth.
 
     This authentication method uses consumer credentials only. This has no
-    concept of "current user" and also will not work with
-    `api.verify_credentials()`.
+    concept of "current user" and so will not work with
+    `api.verify_credentials()`. And does not support streaming.
 
     The advantage is that this method has different rate limits - it is better
     in some cases, such as searching for tweets.
