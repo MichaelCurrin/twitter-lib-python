@@ -31,7 +31,7 @@ def search(api, query=None, geocode=None, lang=None):
     ), "At least one of the optional arguments in `search` function must be set"
 
     cursor = tweepy.Cursor(
-        api.search,
+        api.search_tweets,
         q=query,
         geocode=geocode,
         lang=lang,
