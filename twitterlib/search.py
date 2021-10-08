@@ -54,8 +54,9 @@ def main(_args):
 
     cursor = search(api, geocode=geocode, lang=lang)
 
-    tweets = list(lib.print_tweets(cursor.items(50)))
-    lib.tweets_to_csv(tweets)
+    lib.print_tweets(cursor.items(50))
+
+    lib.tweets_to_csv(cursor.items(50))
 
 
 if __name__ == "__main__":
